@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/russkinori/TeamProfile-Composer#readme",
   "dependencies": {
-    "inquirer": "^9.1.4",
-    "jest": "^29.4.3"
+    "inquirer": "^8.2.5",
+    "jest": "^29.4.3",
+    "joi": "^17.8.3"
   }
 }

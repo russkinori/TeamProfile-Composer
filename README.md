@@ -16,8 +16,8 @@ Please use the following steps to install the application:
 4. Open a terminal window and enter the following commands: 
 ```bash
 npm init -y
-npm install inquirer
-
+npm install inquirer@8.2.5
+npm install joi
 ```
 
 ## Usage 
@@ -54,6 +54,8 @@ The resources used for the development of this application are listed below:
   - https://www.geeksforgeeks.org/node-js-path-resolve-method/
   - https://www.npmjs.com/package/inquirer
   - https://youtu.be/M-X23b2AMgg 
+  - https://www.geeksforgeeks.org/async-await-function-in-javascript/
+
 
 ## License
 Licensed by ![MIT](./LICENSE) 

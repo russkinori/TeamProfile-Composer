@@ -1,11 +1,12 @@
-import Manager from './lib/Manager.js';
-import Engineer from './lib/Engineer.js';
-import Intern from './lib/Intern.js';
-import render from './src/page-template.js';
-import inquirer from 'inquirer';
-import Joi from "joi";
-import path from "path";
-import fs from "fs";
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+const Manager = require("./lib/Manager");
+const inquirer = require("inquirer");
+const path = require("path");
+const fs = require("fs");
+const Joi = require("joi");
+
+const render = require("./src/page-template.js");
 
 const OUTPUT_DIR = path.resolve("output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
@@ -17,18 +18,18 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const employees = [];
 let schema = "";
 
-function addManager() {
+async function addManager() {
     console.log('Please enter the team manager\'s information:');
-    inquirer.prompt([
+    let response = await inquirer.prompt([
         {
             type: 'input',
             name: 'name',
             message: 'Name:',
             validate: function (value) {
-                schema = Joi.string().trim().min(3).max(30).required();
+                schema = Joi.string().regex(/^[a-zA-Z]+$/).trim().min(3).max(30).required();
                 const { error } = schema.validate(value);
                 if (error) {
-                    return "Please enter a valid name.";
+                    return "Please enter a valid name using only letters.";
                 }
                 return true;
             },
@@ -72,25 +73,24 @@ function addManager() {
                 return true;
             },
         },
-    ]).then((response) => {
-        const manager = new Manager(response.name, response.id, response.email, response.officeNumber);
-        employees.push(manager);
-        menu();
-    });
+    ])
+    const manager = new Manager(response.name, response.id, response.email, response.officeNumber);
+    employees.push(manager);
+    menu();
 };
 
-function addEngineer() {
+async function addEngineer() {
     console.log('Please enter the engineer\'s information:');
-    inquirer.prompt([
+    let response = await inquirer.prompt([
         {
             type: 'input',
             name: 'name',
             message: 'Name:',
             validate: function (value) {
-                schema = Joi.string().trim().min(3).max(30).required();
+                schema = Joi.string().regex(/^[a-zA-Z]+$/).trim().min(3).max(30).required();
                 const { error } = schema.validate(value);
                 if (error) {
-                    return "Please enter a valid name";
+                    return "Please enter a valid name using only letters";
                 }
                 return true;
             },
@@ -134,25 +134,24 @@ function addEngineer() {
                 return true;
             },
         },
-    ]).then((response) => {
-        const engineer = new Engineer(response.name, response.id, response.email, response.github);
-        employees.push(engineer);
-        menu();
-    });
+    ])
+    const engineer = new Engineer(response.name, response.id, response.email, response.github);
+    employees.push(engineer);
+    menu();
 };
 
-function addIntern() {
+async function addIntern() {
     console.log('Please enter the intern\'s information:');
-    inquirer.prompt([
+    let response = await inquirer.prompt([
         {
             type: 'input',
             name: 'name',
             message: 'Name:',
             validate: function (value) {
-                schema = Joi.string().trim().min(3).max(30).required();
+                schema = Joi.string().regex(/^[a-zA-Z]+$/).trim().min(3).max(30).required();
                 const { error } = schema.validate(value);
                 if (error) {
-                    return "Please enter a valid name";
+                    return "Please enter a valid name using only letters";
                 }
                 return true;
             },
@@ -196,11 +195,10 @@ function addIntern() {
                 return true;
             },
         },
-    ]).then((response) => {
-        const intern = new Intern(response.name, response.id, response.email, response.school);
-        employees.push(intern);
-        menu();
-    });
+    ])
+    const intern = new Intern(response.name, response.id, response.email, response.school);
+    employees.push(intern);
+    menu();
 };
 
 function menu() {
