@@ -5,24 +5,36 @@ This repo contains a Node.js command-line application which takes information ab
 
 The application accepts user input to to gather information about the development team members and creates objects for each team member using the correct classes as blueprints.
 
-Technologies used include the inquirer, joi and jest packages, html, css, javascript, 
+Technologies used include the inquirer, joi and jest packages, html, css, javascript, classes and inheritance subclasses.
+
+## Installation
+
+Please use the following steps to install the application: 
+1. Using your preferred code editor, copy the code from this link: . 
+2. Create an index.mjs file and paste the code within. 
+3. Save the file. 
+4. Open a terminal window and enter the following commands: 
+```bash
+npm init -y
+npm install inquirer
+
+```
 
 ## Usage 
 1. Right click on the index.js file and select **Open in Integrated Terminal** 
 2. In the opened terminal window, type the command ```index.js``` to start the application.
-3. Enter the **team manager**’s details as prompted:
-      * Name
-      * Employee ID
-      * Email address
-      * Office number
-4. You will then be presented with an option menu for selecting the other team members and/or completing the team build. Use the Up and down keys on your keyboard to make the required selection.
-5. Enter the details as prompted.
+3. Then enter the **team manager**’s details as prompted:
+    * Name
+    * Employee ID
+    * Email address
+    * Office number
+4. You will then be presented with an option menu for selecting the other team members and/or completing the team build. Use the Up and down keys on your keyboard to select the required team members and enter the details as prompted.
     * The **team engineer**’s:
       * Name
       * Employee ID
       * Email address
       * GitHub username
-    The **intern**’s:
+    * The **intern**’s:
       * Name
       * Employee ID
       * Email address
@@ -36,10 +48,13 @@ Technologies used include the inquirer, joi and jest packages, html, css, javasc
 
 ![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./Assets/14-object-oriented-programming-challenge-demo.png)
 
-
 ## Credits
 The resources used for the development of this application are listed below:
   - https://joi.dev/api/?v=17.8.1
   - https://www.geeksforgeeks.org/node-js-path-resolve-method/
   - https://www.npmjs.com/package/inquirer
+  - https://youtu.be/M-X23b2AMgg 
+
+## License
+Licensed by ![MIT](./LICENSE) 
   

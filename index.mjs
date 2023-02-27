@@ -15,6 +15,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
 const employees = [];
+let schema = "";
 
 function addManager() {
     console.log('Please enter the team manager\'s information:');
@@ -24,10 +25,10 @@ function addManager() {
             name: 'name',
             message: 'Name:',
             validate: function (value) {
-                const mgrNameSchema = Joi.string().trim().min(3).max(30).required();
-                const { error } = mgrNameSchema.validate(value);
+                schema = Joi.string().trim().min(3).max(30).required();
+                const { error } = schema.validate(value);
                 if (error) {
-                    return "Please enter the team manager's name.";
+                    return "Please enter a valid name.";
                 }
                 return true;
             },
@@ -37,8 +38,8 @@ function addManager() {
             name: 'id',
             message: 'Employee ID:',
             validate: function (value) {
-                const mgrIdSchema = Joi.number().integer().min(1).max(50).required();
-                const { error } = mgrIdSchema.validate(value);
+                schema = Joi.number().integer().min(1).max(50).required();
+                const { error } = schema.validate(value);
                 if (error) {
                     return "Please enter a valid whole number between 1 and 50";
                 }
@@ -50,8 +51,8 @@ function addManager() {
             name: 'email',
             message: 'Email address:',
             validate: function (value) {
-                const mgrEmailSchema = Joi.string().email().required();
-                const { error } = mgrEmailSchema.validate(value);
+                schema = Joi.string().email().required();
+                const { error } = schema.validate(value);
                 if (error) {
                     return "Please enter a valid email address.";
                 }
@@ -63,10 +64,10 @@ function addManager() {
             name: 'officeNumber',
             message: 'Office number:',
             validate: function (value) {
-                const schema = Joi.number().integer().min(1).max(10).required();
+                schema = Joi.number().integer().min(1).max(10).required();
                 const { error } = schema.validate(value);
                 if (error) {
-                    return "Please enter a valid number between 1 and 10";
+                    return "Please enter a valid whole number between 1 and 10";
                 }
                 return true;
             },
@@ -86,10 +87,10 @@ function addEngineer() {
             name: 'name',
             message: 'Name:',
             validate: function (value) {
-                const schema = Joi.string().trim().min(3).max(30).required();
+                schema = Joi.string().trim().min(3).max(30).required();
                 const { error } = schema.validate(value);
                 if (error) {
-                    return "Please enter a name containing only letters";
+                    return "Please enter a valid name";
                 }
                 return true;
             },
@@ -99,10 +100,10 @@ function addEngineer() {
             name: 'id',
             message: 'Employee ID:',
             validate: function (value) {
-                const schema = Joi.string().trim().min(3).max(30).required();
+                schema = Joi.number().integer().min(1).max(50).required();
                 const { error } = schema.validate(value);
                 if (error) {
-                    return "Please enter a name containing only letters";
+                    return "Please enter a whole number between 1 and 50";
                 }
                 return true;
             },
@@ -112,10 +113,10 @@ function addEngineer() {
             name: 'email',
             message: 'Email address:',
             validate: function (value) {
-                const schema = Joi.string().trim().min(3).max(30).required();
+                schema = Joi.string().email().required();
                 const { error } = schema.validate(value);
                 if (error) {
-                    return "Please enter a name containing only letters";
+                    return "Please enter a valid email.";
                 }
                 return true;
             },
@@ -125,10 +126,10 @@ function addEngineer() {
             name: 'github',
             message: 'GitHub username:',
             validate: function (value) {
-                const schema = Joi.string().trim().min(3).max(30).required();
+                schema = Joi.string().trim().min(4).max(30).required();
                 const { error } = schema.validate(value);
                 if (error) {
-                    return "Please enter a name containing only letters";
+                    return "Please enter a valid username containing 5 to 30 characters";
                 }
                 return true;
             },
@@ -148,10 +149,10 @@ function addIntern() {
             name: 'name',
             message: 'Name:',
             validate: function (value) {
-                const schema = Joi.string().trim().min(3).max(30).required();
+                schema = Joi.string().trim().min(3).max(30).required();
                 const { error } = schema.validate(value);
                 if (error) {
-                    return "Please enter a name containing only letters";
+                    return "Please enter a valid name";
                 }
                 return true;
             },
@@ -161,10 +162,10 @@ function addIntern() {
             name: 'id',
             message: 'Employee ID:',
             validate: function (value) {
-                const schema = Joi.string().number().integer().min(3).max(30).required();
+                schema = Joi.number().integer().min(1).max(50).required();
                 const { error } = schema.validate(value);
                 if (error) {
-                    return "Please enter a number between 1 and 50";
+                    return "Please enter a whole number between 1 and 50";
                 }
                 return true;
             },
@@ -174,10 +175,10 @@ function addIntern() {
             name: 'email',
             message: 'Email address:',
             validate: function (value) {
-                const schema = Joi.string().email().required();
+                schema = Joi.string().email().required();
                 const { error } = schema.validate(value);
                 if (error) {
-                    return "Please enter a name containing only letters";
+                    return "Please enter a valid email.";
                 }
                 return true;
             },
@@ -187,10 +188,10 @@ function addIntern() {
             name: 'school',
             message: 'School:',
             validate: function (value) {
-                const schema = Joi.string().trim().min(3).max(30).required();
+                schema = Joi.string().trim().min(3).max(30).required();
                 const { error } = schema.validate(value);
                 if (error) {
-                    return "Please enter a school containing only letters";
+                    return "Please enter a valid school name";
                 }
                 return true;
             },
