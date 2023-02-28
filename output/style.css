@@ -9,12 +9,7 @@
 }
 
 .employee-card {
-    display: flex;
-    width: 800px;
-}
-.card {
     margin: 10px;
-    
 }
 
 .card-header{

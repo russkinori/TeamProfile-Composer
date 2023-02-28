@@ -15,9 +15,12 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
+//Empty array to hold newly generated 
 const employees = [];
+//schema variable for validation usage
 let schema = "";
 
+//Function to generate the team manager
 async function addManager() {
     console.log('Please enter the team manager\'s information:');
     let response = await inquirer.prompt([
@@ -25,11 +28,12 @@ async function addManager() {
             type: 'input',
             name: 'name',
             message: 'Name:',
+            //Validate name to alphabets
             validate: function (value) {
                 schema = Joi.string().regex(/^[a-zA-Z]+$/).trim().min(3).max(30).required();
                 const { error } = schema.validate(value);
                 if (error) {
-                    return "Please enter a valid name using only letters.";
+                    return "Please enter a name with a minimum of 3 characters using only letters.";
                 }
                 return true;
             },
@@ -38,6 +42,7 @@ async function addManager() {
             type: 'input',
             name: 'id',
             message: 'Employee ID:',
+            //Validate employee id to a number 
             validate: function (value) {
                 schema = Joi.number().integer().min(1).max(50).required();
                 const { error } = schema.validate(value);
@@ -51,6 +56,7 @@ async function addManager() {
             type: 'input',
             name: 'email',
             message: 'Email address:',
+            //Validate the email address
             validate: function (value) {
                 schema = Joi.string().email().required();
                 const { error } = schema.validate(value);
@@ -64,6 +70,7 @@ async function addManager() {
             type: 'input',
             name: 'officeNumber',
             message: 'Office number:',
+            //Validate office number to a number 
             validate: function (value) {
                 schema = Joi.number().integer().min(1).max(10).required();
                 const { error } = schema.validate(value);
@@ -79,6 +86,7 @@ async function addManager() {
     menu();
 };
 
+//Function to generate an engineer
 async function addEngineer() {
     console.log('Please enter the engineer\'s information:');
     let response = await inquirer.prompt([
@@ -86,6 +94,7 @@ async function addEngineer() {
             type: 'input',
             name: 'name',
             message: 'Name:',
+            //Validate name to alphabets
             validate: function (value) {
                 schema = Joi.string().regex(/^[a-zA-Z]+$/).trim().min(3).max(30).required();
                 const { error } = schema.validate(value);
@@ -99,6 +108,7 @@ async function addEngineer() {
             type: 'input',
             name: 'id',
             message: 'Employee ID:',
+            //Validate employee id to a number 
             validate: function (value) {
                 schema = Joi.number().integer().min(1).max(50).required();
                 const { error } = schema.validate(value);
@@ -112,6 +122,7 @@ async function addEngineer() {
             type: 'input',
             name: 'email',
             message: 'Email address:',
+            //Validate the email address
             validate: function (value) {
                 schema = Joi.string().email().required();
                 const { error } = schema.validate(value);
@@ -125,6 +136,7 @@ async function addEngineer() {
             type: 'input',
             name: 'github',
             message: 'GitHub username:',
+            //Validate github username to between 4 to 30 characters
             validate: function (value) {
                 schema = Joi.string().trim().min(4).max(30).required();
                 const { error } = schema.validate(value);
@@ -140,6 +152,7 @@ async function addEngineer() {
     menu();
 };
 
+//Function to generate and intern
 async function addIntern() {
     console.log('Please enter the intern\'s information:');
     let response = await inquirer.prompt([
@@ -147,6 +160,7 @@ async function addIntern() {
             type: 'input',
             name: 'name',
             message: 'Name:',
+            //Validate name to alphabets 
             validate: function (value) {
                 schema = Joi.string().regex(/^[a-zA-Z]+$/).trim().min(3).max(30).required();
                 const { error } = schema.validate(value);
@@ -160,6 +174,7 @@ async function addIntern() {
             type: 'input',
             name: 'id',
             message: 'Employee ID:',
+            //Validate employee id to a number 
             validate: function (value) {
                 schema = Joi.number().integer().min(1).max(50).required();
                 const { error } = schema.validate(value);
@@ -173,6 +188,7 @@ async function addIntern() {
             type: 'input',
             name: 'email',
             message: 'Email address:',
+            //Validate the email. 
             validate: function (value) {
                 schema = Joi.string().email().required();
                 const { error } = schema.validate(value);
@@ -186,6 +202,7 @@ async function addIntern() {
             type: 'input',
             name: 'school',
             message: 'School:',
+            //Validate school to between 3 to 30 characters
             validate: function (value) {
                 schema = Joi.string().trim().min(3).max(30).required();
                 const { error } = schema.validate(value);
@@ -201,6 +218,7 @@ async function addIntern() {
     menu();
 };
 
+//Function for team member options  
 function menu() {
     inquirer.prompt([
         {

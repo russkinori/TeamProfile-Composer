@@ -3,7 +3,7 @@
 ## Description
 This repo contains a Node.js command-line application which takes information about employees on a software engineering team and generates an HTML webpage that displays summaries for each person.
 
-The application accepts user input to to gather information about the development team members and creates objects for each team member using the correct classes as blueprints.
+The application accepts user input to gather information about the development team members and creates objects for each team member using the correct classes as blueprints.
 
 Technologies used include the inquirer, joi and jest packages, html, css, javascript, classes and inheritance subclasses.
 
@@ -11,7 +11,7 @@ Technologies used include the inquirer, joi and jest packages, html, css, javasc
 
 Please use the following steps to install the application: 
 1. Using your preferred code editor, copy the code from this link: . 
-2. Create an index.mjs file and paste the code within. 
+2. Create an index.js file and paste the code within. 
 3. Save the file. 
 4. Open a terminal window and enter the following commands: 
 ```bash
@@ -46,7 +46,7 @@ npm install joi
     * Right click the `team.html` file and select **Open with Live Server** or **Open with Default Browser**.
 10. A screenshot of the generated HTML’s appearance and functionality can be seen below:
 
-![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./Assets/14-object-oriented-programming-challenge-demo.png)
+![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./assets/teamprofile-composer-sample.png)
 
 ## Credits
 The resources used for the development of this application are listed below:
@@ -55,8 +55,8 @@ The resources used for the development of this application are listed below:
   - https://www.npmjs.com/package/inquirer
   - https://youtu.be/M-X23b2AMgg 
   - https://www.geeksforgeeks.org/async-await-function-in-javascript/
-
+  - https://www.softwaretestinghelp.com/jest-testing-tutorial/
 
 ## License
-Licensed by ![MIT](./LICENSE) 
+Licensed by [MIT](https://img.shields.io/badge/License-MIT-yellow.svg) 
   
