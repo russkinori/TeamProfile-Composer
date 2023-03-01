@@ -7,18 +7,29 @@ The application accepts user input to gather information about the development t
 
 Technologies used include the inquirer, joi and jest packages, html, css, javascript, classes and inheritance subclasses.
 
+<hr>
+
 ## Installation
 
 Please use the following steps to install the application: 
-1. Using your preferred code editor, copy the code from this link: . 
-2. Create an index.js file and paste the code within. 
-3. Save the file. 
-4. Open a terminal window and enter the following commands: 
+1. Using your preferred code editor, copy the code from this link: https://github.com/russkinori/TeamProfile-Composer. 
+2. Click **Code** and copy the url of the repository. 
+ * To clone the repository using HTTPS, click **HTTPS** then the copy.
+ * To clone the repository using an SSH key, including a certificate issued by your organization's SSH certificate authority, click **SSH** then copy.
+ * To clone a repository using GitHub CLI, click **GitHub CLI** then copy.
+3.  Open Git Bash and change the current working directory to the location where you want the cloned directory.
+4. Type git clone, and then paste the URL you copied earlier as seen below.
+```bash 
+git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+```
+5. Open your preferred code editor and open the folder. 
+6. In the code editor, open a terminal window and enter the following commands: 
 ```bash
 npm init -y
 npm install inquirer@8.2.5
 npm install joi
 ```
+<hr>
 
 ## Usage 
 1. Right click on the index.js file and select **Open in Integrated Terminal** 
@@ -46,7 +57,11 @@ npm install joi
     * Right click the `team.html` file and select **Open with Live Server** or **Open with Default Browser**.
 10. A screenshot of the generated HTML’s appearance and functionality can be seen below:
 
+<br>
+
 ![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./assets/teamprofile-composer-sample.png)
+
+<hr>
 
 ## Credits
 The resources used for the development of this application are listed below:
@@ -56,6 +71,8 @@ The resources used for the development of this application are listed below:
   - https://youtu.be/M-X23b2AMgg 
   - https://www.geeksforgeeks.org/async-await-function-in-javascript/
   - https://www.softwaretestinghelp.com/jest-testing-tutorial/
+
+<hr>
 
 ## License
 Licensed by [MIT](https://img.shields.io/badge/License-MIT-yellow.svg) 
